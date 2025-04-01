@@ -1,0 +1,150 @@
+/* Dashboard.module.css */
+
+/* Reused Base Styles (consistent with other sections) */
+.section {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 2rem auto;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.section h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #2c3e50;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 0.5rem;
+}
+
+/* Skills Container */
+.skillsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin-bottom: 2rem;
+}
+
+.skillItem {
+    background: white;
+    padding: 0.6rem 1rem;
+    border-radius: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.2s ease;
+}
+
+.skillItem:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.skillItem span {
+    font-size: 0.95rem;
+    color: #2c3e50;
+}
+
+/* Input Group */
+.inputGroup {
+    display: flex;
+    gap: 0.8rem;
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.inputField {
+    flex-grow: 1;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.inputField:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+/* Buttons (modified for skills) */
+.addButton {
+    padding: 0 1.8rem;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    white-space: nowrap;
+}
+
+.addButton:hover:not(:disabled) {
+    background-color: #2980b9;
+    transform: translateY(-1px);
+}
+
+.addButton:disabled {
+    background-color: #bdc3c7;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.deleteButton {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 22px;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-size: 1rem;
+    line-height: 1;
+    padding: 0;
+}
+
+.deleteButton:hover {
+    background-color: #c0392b;
+    transform: scale(1.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .section {
+        padding: 1rem;
+    }
+
+    .inputGroup {
+        padding: 1rem;
+        flex-direction: column;
+    }
+
+    .addButton {
+        padding: 0.8rem;
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .section h2 {
+        font-size: 1.5rem;
+    }
+
+    .skillItem {
+        padding: 0.5rem 0.8rem;
+    }
+
+    .inputField {
+        padding: 0.7rem;
+    }
+}
