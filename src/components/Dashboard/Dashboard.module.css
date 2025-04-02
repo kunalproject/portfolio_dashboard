@@ -1,114 +1,69 @@
 /* Dashboard.module.css */
 
-/* Base Styles */
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 2rem 1rem;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #2d3748;
+    padding: 2rem;
+    color: #333;
+}
+
+.loading {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-top: 2rem;
 }
 
 .title {
     text-align: center;
-    margin-bottom: 2.5rem;
-    color: #2c3e50;
-    font-size: 2.2rem;
-    font-weight: 600;
-    position: relative;
-    padding-bottom: 0.5rem;
-}
-
-.title::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100px;
-    height: 3px;
-    background: #4a6bff;
-}
-
-/* Section Styles */
-.section {
-    background: #ffffff;
-    border-radius: 10px;
-    padding: 1.8rem;
     margin-bottom: 2rem;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-        0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    color: #2c3e50;
+    font-size: 2.5rem;
 }
 
-.section:hover {
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
-        0 4px 6px -2px rgba(0, 0, 0, 0.05);
-    transform: translateY(-2px);
+.section {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    margin-bottom: 2rem;
 }
 
 .section h2 {
     margin-top: 0;
     margin-bottom: 1.5rem;
     color: #2c3e50;
-    font-size: 1.4rem;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+    font-size: 1.5rem;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 0.5rem;
 }
 
-.section h2::before {
-    content: '';
-    display: inline-block;
-    width: 8px;
-    height: 20px;
-    background: #4a6bff;
-    border-radius: 4px;
-}
-
-/* Profile Picture Section */
 .profileSection {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 2rem;
-}
-
-@media (min-width: 768px) {
-    .profileSection {
-        flex-direction: row;
-        align-items: flex-start;
-    }
+    gap: 1.5rem;
 }
 
 .imageContainer {
-    width: 180px;
-    height: 180px;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
     overflow: hidden;
-    border: 4px solid #e2e8f0;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    position: relative;
+    border: 3px solid #eee;
 }
 
 .profileImage {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.3s ease;
-}
-
-.imageContainer:hover .profileImage {
-    transform: scale(1.05);
 }
 
 .uploadControls {
     display: flex;
     flex-direction: column;
-    gap: 1.2rem;
-    flex: 1;
+    gap: 1rem;
     width: 100%;
+    max-width: 300px;
 }
 
 .fileInput {
@@ -116,360 +71,155 @@
 }
 
 .fileInputLabel {
-    padding: 0.8rem 1.6rem;
-    background-color: #4a6bff;
+    padding: 0.75rem 1.5rem;
+    background-color: #3498db;
     color: white;
-    border: none;
-    border-radius: 6px;
+    border-radius: 4px;
     cursor: pointer;
     text-align: center;
-    font-weight: 500;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
+    transition: background-color 0.3s;
 }
 
 .fileInputLabel:hover {
-    background-color: #3a5bef;
-    transform: translateY(-1px);
-}
-
-.fileInputLabel svg {
-    width: 18px;
-    height: 18px;
+    background-color: #2980b9;
 }
 
 .uploadButton {
-    padding: 0.8rem 1.6rem;
-    background-color: #10b981;
+    padding: 0.75rem 1.5rem;
+    background-color: #2ecc71;
     color: white;
     border: none;
-    border-radius: 6px;
+    border-radius: 4px;
     cursor: pointer;
-    font-weight: 500;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
+    transition: background-color 0.3s;
 }
 
 .uploadButton:hover {
-    background-color: #0d9f6e;
-    transform: translateY(-1px);
+    background-color: #27ae60;
 }
 
 .uploadButton:disabled {
-    background-color: #94a3b8;
+    background-color: #95a5a6;
     cursor: not-allowed;
-    transform: none;
-}
-
-/* Form Styles */
-.formGroup {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
 }
 
 .inputGroup {
-    position: relative;
-    margin-bottom: 1.2rem;
-}
-
-.inputGroup label {
-    display: block;
-    margin-bottom: 0.6rem;
-    font-weight: 500;
-    color: #4a5568;
-    font-size: 0.95rem;
-}
-
-.inputField {
-    width: 100%;
-    padding: 0.9rem 1.2rem;
-    border: 1px solid #e2e8f0;
-    border-radius: 8px;
-    font-size: 1rem;
-    transition: all 0.3s ease;
-    background-color: #f8fafc;
-}
-
-.inputField:focus {
-    outline: none;
-    border-color: #4a6bff;
-    box-shadow: 0 0 0 3px rgba(74, 107, 255, 0.15);
-    background-color: white;
-}
-
-.textareaGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
     margin-bottom: 1.5rem;
 }
 
-.textarea {
-    width: 100%;
-    padding: 1rem;
-    border: 1px solid #e2e8f0;
-    border-radius: 8px;
+.inputGroup label {
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.inputField {
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
     font-size: 1rem;
-    resize: vertical;
-    min-height: 120px;
-    background-color: #f8fafc;
-    transition: all 0.3s ease;
+    width: 100%;
 }
 
-.textarea:focus {
-    outline: none;
-    border-color: #4a6bff;
-    box-shadow: 0 0 0 3px rgba(74, 107, 255, 0.15);
-    background-color: white;
-}
-
-/* Button Styles */
-.buttonGroup {
+.textareaGroup {
     display: flex;
-    gap: 1rem;
-    margin-top: 1rem;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.textarea {
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    width: 100%;
+    min-height: 120px;
+    resize: vertical;
 }
 
 .updateButton {
-    padding: 0.8rem 1.6rem;
-    background-color: #4a6bff;
+    padding: 0.75rem 1.5rem;
+    background-color: #3498db;
     color: white;
     border: none;
-    border-radius: 8px;
+    border-radius: 4px;
     cursor: pointer;
-    font-weight: 500;
-    transition: all 0.3s ease;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
+    transition: background-color 0.3s;
+    align-self: flex-start;
 }
 
 .updateButton:hover {
-    background-color: #3a5bef;
-    transform: translateY(-1px);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #2980b9;
 }
 
 .updateButton:disabled {
-    background-color: #94a3b8;
-    cursor: not-allowed;
-    transform: none;
-    box-shadow: none;
-}
-
-.addButton {
-    padding: 0.8rem 1.6rem;
-    background-color: #10b981;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: 500;
-    transition: all 0.3s ease;
-}
-
-.addButton:hover {
-    background-color: #0d9f6e;
-    transform: translateY(-1px);
-}
-
-.addButton:disabled {
-    background-color: #94a3b8;
+    background-color: #95a5a6;
     cursor: not-allowed;
 }
 
-.deleteButton {
-    padding: 0.6rem 1.2rem;
-    background-color: #ef4444;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-weight: 500;
-    transition: all 0.3s ease;
-    font-size: 0.9rem;
-}
-
-.deleteButton:hover {
-    background-color: #dc2626;
-    transform: translateY(-1px);
-}
-
-.deleteButton:disabled {
-    background-color: #94a3b8;
-    cursor: not-allowed;
-}
-
-.dangerButton {
-    padding: 0.8rem 1.6rem;
-    background-color: #ef4444;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: 500;
-    transition: all 0.3s ease;
-}
-
-.dangerButton:hover {
-    background-color: #dc2626;
-    transform: translateY(-1px);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.dangerButton:disabled {
-    background-color: #94a3b8;
-    cursor: not-allowed;
-}
-
-/* Grid Layout */
 .gridContainer {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 1.8rem;
-    margin-top: 1.2rem;
+    gap: 1.5rem;
 }
 
-/* Section Navigation */
 .sectionButtons {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 1.2rem;
-    margin-top: 1rem;
-}
-
-.sectionButton {
-    padding: 0.9rem;
-    background-color: #4a6bff;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: 500;
-    transition: all 0.3s ease;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-}
-
-.sectionButton:hover {
-    background-color: #3a5bef;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-/* Date Input Group */
-.dateGroup {
-    display: flex;
-    gap: 1.2rem;
-}
-
-.dateGroup .inputField {
-    flex: 1;
-}
-
-/* Loading State */
-.loading {
-    text-align: center;
-    padding: 3rem;
-    font-size: 1.5rem;
-    color: #64748b;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 1rem;
 }
 
-.loadingSpinner {
-    width: 50px;
-    height: 50px;
-    border: 5px solid #e2e8f0;
-    border-top-color: #4a6bff;
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
+.sectionButton {
+    padding: 0.75rem 1.5rem;
+    background-color: #9b59b6;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-align: center;
 }
 
-@keyframes spin {
-    to {
-        transform: rotate(360deg);
-    }
+.sectionButton:hover {
+    background-color: #8e44ad;
 }
 
-/* Item Cards */
-.itemsContainer {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 1.5rem;
-    margin-bottom: 2rem;
+.dangerButton {
+    padding: 0.75rem 1.5rem;
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-.itemCard {
-    background: white;
-    padding: 1.5rem;
-    border-radius: 10px;
-    border: 1px solid #e2e8f0;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-    position: relative;
+.dangerButton:hover {
+    background-color: #c0392b;
 }
 
-.itemCard:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+.dangerButton:disabled {
+    background-color: #95a5a6;
+    cursor: not-allowed;
 }
 
-.itemCard h3 {
-    margin-top: 0;
-    margin-bottom: 0.8rem;
-    color: #2c3e50;
-    font-size: 1.2rem;
-    font-weight: 600;
-}
-
-.itemCard p {
-    margin: 0.5rem 0;
-    color: #4a5568;
-    font-size: 0.95rem;
-    line-height: 1.5;
-}
-
-.itemCard a {
-    color: #4a6bff;
-    text-decoration: none;
-    font-weight: 500;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.3rem;
-    margin-top: 0.5rem;
-}
-
-.itemCard a:hover {
-    text-decoration: underline;
-}
-
-.itemCard .deleteButton {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-}
-
-/* Responsive Adjustments */
+/* Media Queries */
 @media (max-width: 768px) {
     .container {
-        padding: 1.5rem 1rem;
+        padding: 1rem;
+    }
+    .title {
+        font-size: 2rem;
     }
 
-    .title {
-        font-size: 1.8rem;
-        margin-bottom: 2rem;
+    .section {
+        padding: 1rem;
+    }
+
+    .profileSection {
+        flex-direction: column;
     }
 
     .gridContainer {
@@ -480,26 +230,110 @@
         grid-template-columns: 1fr;
     }
 
-    .profileSection {
-        flex-direction: column;
-        align-items: center;
+    .updateButton {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 1.75rem;
+    }
+    .section h2 {
+        font-size: 1.25rem;
     }
 
     .imageContainer {
-        width: 150px;
-        height: 150px;
+        width: 120px;
+        height: 120px;
+    }
+
+    .inputField,
+    .textarea {
+        font-size: 0.9rem;
+    }
+}
+/* Dashboard.module.css - Input Field Overflow Fix */
+
+/* Add these new rules to fix input overflow */
+.inputField,
+.textarea,
+.fileInputLabel,
+.uploadButton,
+.updateButton,
+.sectionButton,
+.dangerButton {
+    box-sizing: border-box;
+    max-width: 100%;
+}
+
+.inputGroup,
+.textareaGroup,
+.uploadControls {
+    width: 100%;
+}
+
+/* Add this media query for very small devices */
+@media (max-width: 360px) {
+    .container {
+        padding: 1rem 0.5rem;
+    }
+
+    .inputField,
+    .textarea {
+        padding: 0.6rem;
+        font-size: 0.9rem;
+    }
+
+    .fileInputLabel,
+    .uploadButton,
+    .updateButton,
+    .sectionButton,
+    .dangerButton {
+        padding: 0.6rem;
+        font-size: 0.9rem;
     }
 }
 
-/* Status Indicators */
-.successMessage {
-    color: #10b981;
-    font-weight: 500;
-    margin-top: 0.5rem;
+/* Keep all your existing CSS below exactly as is */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    color: #333;
 }
 
-.errorMessage {
-    color: #ef4444;
-    font-weight: 500;
-    margin-top: 0.5rem;
+.loading {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-top: 2rem;
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #2c3e50;
+    font-size: 2.5rem;
+}
+
+/* ... (rest of your existing CSS remains completely unchanged) ... */
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 1.75rem;
+    }
+
+    .section h2 {
+        font-size: 1.25rem;
+    }
+
+    .imageContainer {
+        width: 120px;
+        height: 120px;
+    }
+
+    .inputField,
+    .textarea {
+        font-size: 0.9rem;
+    }
 }

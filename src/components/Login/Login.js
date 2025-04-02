@@ -5,7 +5,6 @@ import styles from './Login.module.css';
 import { toast } from 'react-toastify';
 import { PortfolioContext } from '../../PortfolioContext';
 import { useContext } from 'react';
-import Spinner from '../Spinner'
 const Login = () => {
   const {setLoading,loading} = useContext(PortfolioContext);
   const [email, setEmail] = useState('');

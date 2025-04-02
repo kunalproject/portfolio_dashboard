@@ -2,22 +2,6 @@ import React from 'react'
 import styles from "./Home.module.css";
 import axios from 'axios';
 const Home = () => {
-    // const url=`${process.env.REACT_APP_GET_LINKS}`;
-    // console.log("url is ",url);
-    // const [link,setLink]=useState("");
-    // useEffect(()=>{
-    //     const getLink=async()=>{
-    //         try{
-    //             const response=await axios.get(url);
-    //             console.log("response is ",response);
-    //             setLink(response.data);
-    //         }
-    //         catch(err){
-    //             console.log("error is ",err);
-    //         }
-    //     }
-    //     getLink();
-    // },[])
   return (
     <div className={styles.app}>
       {/* Hero Section */}

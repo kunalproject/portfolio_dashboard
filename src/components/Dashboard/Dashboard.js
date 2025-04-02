@@ -104,7 +104,12 @@ const Dashboard = () => {
       toast.error('Please select a file');
       return;
     }
+const fileSizeInMB = selectedFile.size / (1024 * 1024);
 
+if (fileSizeInMB > 2) {
+  toast.error('File size should be less than 2MB');
+  return;
+}
     setIsLoading(prev => ({ ...prev, profilePic: true }));
     try {
       const formData = new FormData();
