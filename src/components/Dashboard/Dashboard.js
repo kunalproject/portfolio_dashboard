@@ -4,7 +4,6 @@ import axios from 'axios';
 import { toast } from 'react-toastify';
 import styles from './Dashboard.module.css';
 import { PortfolioContext } from '../../PortfolioContext';
-
 const Dashboard = () => {
   
   const { userData, setUserData } = useContext(PortfolioContext);
@@ -498,7 +497,15 @@ if (fileSizeInMB > 2) {
           </button>
         </div>
       </div>
-
+      {/* Message Section */}
+      <div className={styles.section}>  
+        <h2>Message</h2>
+        <div className={styles.sectionButtons}>
+          <button onClick={() => navigate('/dashboard/messages')} className={styles.sectionButton}>
+            View Messages
+          </button>
+        </div>
+      </div>
       {/* Portfolio Management */}
       <div className={styles.section}>
         <h2>Portfolio Management</h2>
