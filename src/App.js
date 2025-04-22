@@ -10,6 +10,7 @@ import ProjectsSection from './components/Dashboard/ProjectsSection';
 import ExperienceSection from './components/Dashboard/ExperienceSection';
 import EducationSection from './components/Dashboard/EducationSection';
 import { PortfolioContext } from './PortfolioContext';
+import Message from './components/Dashboard/Message';
 import { useContext } from 'react';
 import Spinner from './components/Spinner';
 function App() {
@@ -25,6 +26,7 @@ function App() {
         <Route path='/dashboard/projects' element={<ProjectsSection/>} />
         <Route path='/dashboard/experiences' element={<ExperienceSection/>} />
         <Route path='/dashboard/educations' element={<EducationSection/>} />
+        <Route path='/dashboard/messages' element={<Message/>} />
       </Routes>
     </div>
   );
